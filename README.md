@@ -5,17 +5,22 @@ This is a simple CRUD API built using FastAPI and MySQL. It allows you to perfor
 ## How to Run the Project
 
 1. Clone the repository:
+
         https://github.com/alchemist1111/plp-database-week-8-assignment# 
 
 2. Create and activate virtual environment:
-        python -m venv env
-        env/scripts/activate
+
+          python -m venv env
+
+          env/scripts/activate
 
 3. Install the dependencies:
-        pip install fastapi uvicorn mysql-connector
-        pip install python dotenv
 
-4. Set up your MySQL database using the `create_tables.sql` file provided.
+          pip install fastapi uvicorn mysql-connector
+
+          pip install python dotenv
+
+4. Set up your MySQL database using the   `sourcecode.sql` file provided.
 
 5. Run the application:
        uvicorn main:app --reload
