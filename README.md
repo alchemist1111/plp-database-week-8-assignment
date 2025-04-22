@@ -24,7 +24,7 @@ This is a simple CRUD API built using FastAPI and MySQL. It allows you to perfor
 
 ## ERD
 
-[Link to your ERD image or a screenshot]
+       https://dbdiagram.io/d/contact_bookdb-6807e5e01ca52373f5ef68fd
 
 ## How to Test
 
