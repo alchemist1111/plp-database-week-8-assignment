@@ -1,6 +1,5 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from db import mysql.connector
 from db import get_db_connection
 
 app = FastAPI()

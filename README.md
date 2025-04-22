@@ -11,15 +11,16 @@ This is a simple CRUD API built using FastAPI and MySQL. It allows you to perfor
         python -m venv env
         env/scripts/activate
 
-2. Install the dependencies:
+3. Install the dependencies:
         pip install fastapi uvicorn mysql-connector
         pip install python dotenv
-3. Set up your MySQL database using the `create_tables.sql` file provided.
 
-4. Run the application:
+4. Set up your MySQL database using the `create_tables.sql` file provided.
+
+5. Run the application:
        uvicorn main:app --reload
 
-5. Access the API at `http://127.0.0.1:8000`
+6. Access the API at `http://127.0.0.1:8000`
 
 ## ERD
 

@@ -58,14 +58,6 @@
         "documentation": {}
     },
     {
-        "label": "mysql.connector",
-        "importPath": "db",
-        "description": "db",
-        "isExtraImport": true,
-        "detail": "db",
-        "documentation": {}
-    },
-    {
         "label": "get_db_connection",
         "importPath": "db",
         "description": "db",
