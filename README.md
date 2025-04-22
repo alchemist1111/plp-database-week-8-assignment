@@ -26,7 +26,9 @@ This is a simple CRUD API built using FastAPI and MySQL. It allows you to perfor
 
           uvicorn main:app --reload
 
-6. Access the API at `http://127.0.0.1:8000`
+6. Access the API at:
+
+          http://127.0.0.1:8000
 
 ## ERD
 
@@ -34,4 +36,6 @@ This is a simple CRUD API built using FastAPI and MySQL. It allows you to perfor
 
 ## How to Test
 
-You can test the API using tools like Postman or cURL, or by using FastAPI's interactive docs at `http://127.0.0.1:8000/docs`.
+You can test the API using tools like Postman or cURL, or by using FastAPI's interactive docs at:
+
+          http://127.0.0.1:8000/docs
