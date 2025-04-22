@@ -23,7 +23,8 @@ This is a simple CRUD API built using FastAPI and MySQL. It allows you to perfor
 4. Set up your MySQL database using the   `sourcecode.sql` file provided.
 
 5. Run the application:
-       uvicorn main:app --reload
+
+          uvicorn main:app --reload
 
 6. Access the API at `http://127.0.0.1:8000`
 
