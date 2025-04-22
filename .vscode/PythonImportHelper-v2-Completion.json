@@ -1,0 +1,139 @@
+[
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_connection",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_connection",
+        "kind": 2,
+        "importPath": "question2.db",
+        "description": "question2.db",
+        "peekOfCode": "def get_db_connection():\n    try:\n        connection = mysql.connector.connect(\n            host=os.getenv(\"DB_HOST\"),\n            database=os.getenv(\"DB_NAME\"),\n            user=os.getenv(\"DB_USER\"),\n            password=os.getenv(\"DB_PASSWORD\")\n        )\n        if connection.is_connected():\n            return connection",
+        "detail": "question2.db",
+        "documentation": {}
+    },
+    {
+        "label": "Contact",
+        "kind": 6,
+        "importPath": "question2.main",
+        "description": "question2.main",
+        "peekOfCode": "class Contact(BaseModel):\n    name: str\n    email: str\n    phone_number: str\n# CREATE - Add a new contact\n@app.post(\"/contacts/\")\ndef create_contact(contact: Contact):\n    connection = get_db_connection()\n    if not connection:\n        raise HTTPException(status_code=500, detail=\"Database connection failed\")",
+        "detail": "question2.main",
+        "documentation": {}
+    },
+    {
+        "label": "create_contact",
+        "kind": 2,
+        "importPath": "question2.main",
+        "description": "question2.main",
+        "peekOfCode": "def create_contact(contact: Contact):\n    connection = get_db_connection()\n    if not connection:\n        raise HTTPException(status_code=500, detail=\"Database connection failed\")\n    cursor = connection.cursor()\n    query = \"INSERT INTO contacts (name, email, phone_number) VALUES (%s, %s, %s)\"\n    cursor.execute(query, (contact.name, contact.email, contact.phone_number))\n    connection.commit()\n    cursor.close()\n    connection.close()",
+        "detail": "question2.main",
+        "documentation": {}
+    },
+    {
+        "label": "read_contact",
+        "kind": 2,
+        "importPath": "question2.main",
+        "description": "question2.main",
+        "peekOfCode": "def read_contact(contact_id: int):\n    connection = get_db_connection()\n    if not connection:\n        raise HTTPException(status_code=500, detail=\"Database connection failed\")\n    cursor = connection.cursor(dictionary=True)\n    query = \"SELECT * FROM contacts WHERE id = %s\"\n    cursor.execute(query, (contact_id,))\n    contact = cursor.fetchone()\n    cursor.close()\n    connection.close()",
+        "detail": "question2.main",
+        "documentation": {}
+    },
+    {
+        "label": "update_contact",
+        "kind": 2,
+        "importPath": "question2.main",
+        "description": "question2.main",
+        "peekOfCode": "def update_contact(contact_id: int, contact: Contact):\n    connection = get_db_connection()\n    if not connection:\n        raise HTTPException(status_code=500, detail=\"Database connection failed\")\n    cursor = connection.cursor()\n    query = \"UPDATE contacts SET name = %s, email = %s, phone_number = %s WHERE id = %s\"\n    cursor.execute(query, (contact.name, contact.email, contact.phone_number, contact_id))\n    connection.commit()\n    cursor.close()\n    connection.close()",
+        "detail": "question2.main",
+        "documentation": {}
+    },
+    {
+        "label": "delete_contact",
+        "kind": 2,
+        "importPath": "question2.main",
+        "description": "question2.main",
+        "peekOfCode": "def delete_contact(contact_id: int):\n    connection = get_db_connection()\n    if not connection:\n        raise HTTPException(status_code=500, detail=\"Database connection failed\")\n    cursor = connection.cursor()\n    query = \"DELETE FROM contacts WHERE id = %s\"\n    cursor.execute(query, (contact_id,))\n    connection.commit()\n    cursor.close()\n    connection.close()",
+        "detail": "question2.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "question2.main",
+        "description": "question2.main",
+        "peekOfCode": "app = FastAPI()\n# Pydantic model for Contact\nclass Contact(BaseModel):\n    name: str\n    email: str\n    phone_number: str\n# CREATE - Add a new contact\n@app.post(\"/contacts/\")\ndef create_contact(contact: Contact):\n    connection = get_db_connection()",
+        "detail": "question2.main",
+        "documentation": {}
+    }
+]
